@@ -49,9 +49,9 @@ public class ClassTransformerAgent {
 									if((ctField.getModifiers() & Modifier.PRIVATE) != 0) {
 										System.err.println(">>>"+ctField.getName());
 								
-										arguments.append(ctField.getType().getName()).append(" ");
-									    arguments.append(ctField.getName()).append(", ");
-                        body.append("this.").append(ctField.getName()).append(" = ").append(ctField.getName()).append(";\n");
+								arguments.append(ctField.getType().getName()).append(" ");
+								arguments.append(ctField.getName()).append(", ");
+                                                         body.append("this.").append(ctField.getName()).append(" = ").append(ctField.getName()).append(";\n");
 							
 							       }
 								}

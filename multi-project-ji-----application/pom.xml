@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>examples-alexander</groupId>
+    <artifactId>multi-project-ji</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>multi-project-ji-----application</artifactId>
+  
+  <dependencies>
+  
+       <dependency>
+           <groupId>examples-alexander</groupId>
+           <artifactId>multi-project-ji-----agent</artifactId>
+           <version>0.0.1-SNAPSHOT</version>
+       </dependency>
+  
+  </dependencies>
+  
+   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <executable>java</executable>
+          <arguments>
+              <argument>-javaagent:${project.parent.basedir}/multi-project-ji-----agent/target/multi-project-ji-----agent-0.0.1-SNAPSHOT.jar</argument>
+              <argument>-classpath</argument>
+              <classpath/>
+              <argument>main.Application</argument>
+          </arguments>
+          
+      </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
